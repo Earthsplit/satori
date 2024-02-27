@@ -1,0 +1,21 @@
+.card {
+	display: grid;
+	align-items: center;
+	transform: perspective(1000px) rotateY(var(--rotate-y, 0));
+	transform-style: preserve-3d;
+	transition: 150ms;
+}
+
+.flip {
+	--rotate-y: 180deg;
+}
+
+.card .front,
+.card .back {
+	grid-area: 1 / 1 / 2 / 2;
+	backface-visibility: hidden;
+}
+
+.back {
+	transform: rotateY(180deg);
+}

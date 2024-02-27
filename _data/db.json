@@ -1,0 +1,46 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "content": {
+        "japanese": "こんにちは",
+        "english": "Hello"
+      }
+    },
+    {
+      "id": "2",
+      "content": {
+        "japanese": "ありがとう",
+        "english": "Thank you"
+      }
+    },
+    {
+      "id": "3",
+      "content": {
+        "japanese": "さようなら",
+        "english": "Goodbye"
+      }
+    },
+    {
+      "id": "4",
+      "content": {
+        "japanese": "おはようございます",
+        "english": "Good morning"
+      }
+    },
+    {
+      "id": "5",
+      "content": {
+        "japanese": "こんばんは",
+        "english": "Good evening"
+      }
+    },
+    {
+      "id": "9791",
+      "content": {
+        "japanese": "家",
+        "english": "house"
+      }
+    }
+  ]
+}
