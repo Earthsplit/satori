@@ -13,7 +13,6 @@ import { cn } from '@/lib/utils'
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import useFetch from '@/hooks/useModifyCards'
 import useModifyCards from '@/hooks/useModifyCards'
 
 const Nav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {

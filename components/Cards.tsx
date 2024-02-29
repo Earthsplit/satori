@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import SingleCard from './SingleCard'
 
 interface Card {
@@ -13,7 +12,7 @@ interface CardsProps {
 	cards: Card[]
 }
 
-const Cards: FC<CardsProps> = ({ cards }) => {
+const Cards = ({ cards }: CardsProps) => {
 	return (
 		<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 relative'>
 			{cards.map(card => (

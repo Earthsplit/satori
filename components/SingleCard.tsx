@@ -1,9 +1,9 @@
 'use client'
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { Card, CardHeader, CardTitle, CardFooter } from './ui/card'
 import { Button } from './ui/button'
-import './ui/styles.css'
 import useModifyCards from '@/hooks/useModifyCards'
+import './ui/styles.css'
 
 interface CardProps {
 	card: {
@@ -15,7 +15,7 @@ interface CardProps {
 	}
 }
 
-const SingleCard: FC<CardProps> = ({ card }) => {
+const SingleCard = ({ card }: CardProps) => {
 	const [flip, setFlip] = useState<boolean>(false)
 	const { deleteCard } = useModifyCards()
 
