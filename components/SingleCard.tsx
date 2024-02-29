@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import { Card, CardHeader, CardTitle, CardFooter } from './ui/card'
 import { Button } from './ui/button'
 import './ui/styles.css'
+import useModifyCards from '@/hooks/useModifyCards'
 
 interface CardProps {
 	card: {
@@ -16,6 +17,7 @@ interface CardProps {
 
 const SingleCard: FC<CardProps> = ({ card }) => {
 	const [flip, setFlip] = useState<boolean>(false)
+	const { deleteCard } = useModifyCards()
 
 	const toggleFlip = () => setFlip(!flip)
 
@@ -25,12 +27,18 @@ const SingleCard: FC<CardProps> = ({ card }) => {
 				<CardHeader>
 					<CardTitle>{card.content.japanese}</CardTitle>
 				</CardHeader>
-				<CardFooter>
+				<CardFooter className='gap-2'>
 					<Button
 						variant='secondary'
 						onClick={toggleFlip}
 					>
 						Flip
+					</Button>
+					<Button
+						variant='destructive'
+						onClick={() => deleteCard(card)}
+					>
+						Delete
 					</Button>
 				</CardFooter>
 			</Card>
@@ -38,12 +46,18 @@ const SingleCard: FC<CardProps> = ({ card }) => {
 				<CardHeader>
 					<CardTitle>{card.content.english}</CardTitle>
 				</CardHeader>
-				<CardFooter>
+				<CardFooter className='gap-2'>
 					<Button
 						variant='secondary'
 						onClick={toggleFlip}
 					>
 						Flip
+					</Button>
+					<Button
+						variant='destructive'
+						onClick={() => deleteCard(card)}
+					>
+						Delete
 					</Button>
 				</CardFooter>
 			</Card>

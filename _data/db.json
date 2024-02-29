@@ -27,20 +27,6 @@
         "japanese": "おはようございます",
         "english": "Good morning"
       }
-    },
-    {
-      "id": "5",
-      "content": {
-        "japanese": "こんばんは",
-        "english": "Good evening"
-      }
-    },
-    {
-      "id": "9791",
-      "content": {
-        "japanese": "家",
-        "english": "house"
-      }
     }
   ]
 }

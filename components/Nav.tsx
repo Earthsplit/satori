@@ -13,10 +13,11 @@ import { cn } from '@/lib/utils'
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import useUpdateCards from '@/hooks/useUpdateCards'
+import useFetch from '@/hooks/useModifyCards'
+import useModifyCards from '@/hooks/useModifyCards'
 
 const Nav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
-	const { cardData, handleChange, updateCards } = useUpdateCards()
+	const { cardData, handleChange, updateCards } = useModifyCards()
 
 	return (
 		<nav

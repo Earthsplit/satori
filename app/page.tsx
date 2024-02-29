@@ -1,22 +1,6 @@
 import Cards from '@/components/Cards'
 import Nav from '@/components/Nav'
-import { revalidatePath } from 'next/cache'
-
-interface Card {
-	id: number
-	content: {
-		japanese: string
-		english: string
-	}
-}
-
-async function getCards(): Promise<Card[]> {
-	const result = await fetch('http://localhost:4000/cards', {
-		cache: 'no-cache',
-	})
-
-	return result.json()
-}
+import getCards from '@/lib/getCards'
 
 export default async function Home() {
 	const cards = await getCards()
@@ -28,6 +12,14 @@ export default async function Home() {
 				<Nav />
 			</header>
 			<Cards cards={cards} />
+			<div>
+				TODO:
+				<ul>
+					<li>put all fetch requests into one custom hook ✅</li>
+					<li>improve ui</li>
+					<li>filter?</li>
+				</ul>
+			</div>
 		</main>
 	)
 }

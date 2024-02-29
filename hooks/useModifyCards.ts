@@ -2,14 +2,22 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-const useUpdateCards = () => {
+interface Card {
+	id: number
+	content: {
+		japanese: string
+		english: string
+	}
+}
+
+const useModifyCards = () => {
 	const [cardData, setCardData] = useState({
 		content: {
 			japanese: '',
 			english: '',
 		},
 	})
-  const router = useRouter()
+	const router = useRouter()
 
 	const updateCards = async () => {
 		try {
@@ -21,7 +29,7 @@ const useUpdateCards = () => {
 				body: JSON.stringify(cardData),
 			})
 
-      router.refresh()
+			router.refresh()
 			if (!response.ok) throw new Error('Error')
 
 			setCardData({
@@ -31,9 +39,22 @@ const useUpdateCards = () => {
 				},
 			})
 		} catch (error) {
-			console.error('Error:', error)
+			console.error('Error updating cards:', error)
 		}
+	}
 
+	const deleteCard = async (card: Card) => {
+		try {
+			const response = await fetch(`http://localhost:4000/cards/${card.id}`, {
+				method: 'DELETE',
+			})
+
+			router.refresh()
+
+			if (!response.ok) throw new Error('Error')
+		} catch (error) {
+			console.error('Error updating cards:', error)
+		}
 	}
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +72,8 @@ const useUpdateCards = () => {
 		cardData,
 		handleChange,
 		updateCards,
+		deleteCard
 	}
 }
 
-export default useUpdateCards
+export default useModifyCards
