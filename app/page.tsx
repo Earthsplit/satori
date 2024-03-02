@@ -1,23 +1,20 @@
-import Cards from '@/components/Cards'
-import Nav from '@/components/Nav'
+import { AddCard } from '@/components/AddCard'
+import CardsFlip from '@/components/CardsFlip'
 import getCards from '@/lib/getCards'
+import Link from 'next/link'
 
 export default async function Home() {
 	const cards = await getCards()
 
 	return (
-		<main className='grid p-16'>
-			<header className='flex items-center justify-between mb-8'>
-				<h1 className='font-bold tracking-tight text-4xl'>Satori 🇯🇵</h1>
-				<Nav />
-			</header>
-			<Cards cards={cards} />
+		<main className='grid'>
+			<AddCard />
+			<CardsFlip cards={cards} />
+			<Link href='/prebuilt-decks'>Prebuilt decks</Link>
 			<div>
 				TODO:
 				<ul>
-					<li>put all fetch requests into one custom hook ✅</li>
-					<li>improve ui</li>
-					<li>filter?</li>
+					<li>Clean up the code</li>
 				</ul>
 			</div>
 		</main>
