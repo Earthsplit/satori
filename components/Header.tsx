@@ -6,7 +6,7 @@ const Header = () => {
 		<header className='flex items-center justify-between mb-8'>
 			<Link
 				href='/'
-				className='font-bold tracking-tight text-4xl'
+				className='font-bold tracking-tight text-2xl sm:text-3xl md:text-4xl'
 			>
 				Satori 🇯🇵
 			</Link>

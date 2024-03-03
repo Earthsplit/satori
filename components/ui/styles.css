@@ -1,6 +1,5 @@
 .card {
 	display: grid;
-	align-items: center;
 	transform: perspective(1000px) rotateY(var(--rotate-y, 0));
 	transform-style: preserve-3d;
 	transition: 150ms;
@@ -12,6 +11,9 @@
 
 .card .front,
 .card .back {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	grid-area: 1 / 1 / 2 / 2;
 	backface-visibility: hidden;
 }

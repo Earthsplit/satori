@@ -4,16 +4,7 @@ import { Card, CardHeader, CardTitle, CardFooter } from './ui/card'
 import { Button } from './ui/button'
 import './ui/styles.css'
 import { CardActions } from './CardActions'
-
-interface CardProps {
-	card: {
-		id: number
-		content: {
-			japanese: string
-			english: string
-		}
-	}
-}
+import { CardProps } from '@/interfaces'
 
 const SingleCardFlip = ({ card }: CardProps) => {
 	const [flip, setFlip] = useState<boolean>(false)
@@ -30,38 +21,30 @@ const SingleCardFlip = ({ card }: CardProps) => {
 						showDeleteButton={true}
 					/>
 				</CardHeader>
-				<CardFooter className='gap-2'>
+				<CardFooter>
 					<Button
 						variant='secondary'
 						onClick={toggleFlip}
 					>
 						Flip
 					</Button>
-					{/* <Button
-						variant='destructive'
-						onClick={() => deleteCard(card)}
-					>
-						Delete
-					</Button> */}
 				</CardFooter>
 			</Card>
 			<Card className='back'>
-				<CardHeader>
+				<CardHeader className='flex flex-row items-center justify-between'>
 					<CardTitle>{card.content.english}</CardTitle>
+					<CardActions
+						card={card}
+						showDeleteButton={true}
+					/>
 				</CardHeader>
-				<CardFooter className='gap-2'>
+				<CardFooter>
 					<Button
 						variant='secondary'
 						onClick={toggleFlip}
 					>
 						Flip
 					</Button>
-					{/* <Button
-						variant='destructive'
-						onClick={() => deleteCard(card)}
-					>
-						Delete
-					</Button> */}
 				</CardFooter>
 			</Card>
 		</div>

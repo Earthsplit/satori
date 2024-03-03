@@ -13,19 +13,9 @@ import {
 	Pencil2Icon,
 } from '@radix-ui/react-icons'
 import useModifyCards from '@/hooks/useModifyCards'
+import { CardActionsProps } from '@/interfaces'
 
-interface CardProps {
-	card?: {
-		id: number
-		content: {
-			japanese: string
-			english: string
-		}
-	}
-	showDeleteButton: boolean
-}
-
-export function CardActions({ card, showDeleteButton }: CardProps) {
+export function CardActions({ card, showDeleteButton }: CardActionsProps) {
 	const { deleteCard } = useModifyCards()
 
 	return (
@@ -49,7 +39,10 @@ export function CardActions({ card, showDeleteButton }: CardProps) {
 				{card && showDeleteButton && (
 					<>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem onClick={() => deleteCard(card)}>
+						<DropdownMenuItem
+							className='text-red-600'
+							onClick={() => deleteCard(card)}
+						>
 							<TrashIcon className='mr-2 h-4 w-4' />
 							<span>Delete</span>
 						</DropdownMenuItem>

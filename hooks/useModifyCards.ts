@@ -1,14 +1,7 @@
 'use client'
+import { Card } from '@/interfaces'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-
-interface Card {
-	id: number
-	content: {
-		japanese: string
-		english: string
-	}
-}
 
 const useModifyCards = () => {
 	const [cardData, setCardData] = useState({
@@ -72,7 +65,7 @@ const useModifyCards = () => {
 		cardData,
 		handleChange,
 		updateCards,
-		deleteCard
+		deleteCard,
 	}
 }
 
