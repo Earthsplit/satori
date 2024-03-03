@@ -19,7 +19,7 @@ export function CardActions({ card, showDeleteButton }: CardActionsProps) {
 	const { deleteCard } = useModifyCards()
 
 	return (
-		<DropdownMenu>
+		<DropdownMenu modal={false}>
 			<DropdownMenuTrigger asChild>
 				<Button
 					variant='ghost'
