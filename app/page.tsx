@@ -1,5 +1,5 @@
 import { AddCard } from '@/components/AddCard'
-import CardsFlip from '@/components/CardsFlip'
+import Cards from '@/components/Cards'
 import getCards from '@/lib/getCards'
 
 export default async function Home() {
@@ -8,7 +8,10 @@ export default async function Home() {
 	return (
 		<main className='grid'>
 			<AddCard />
-			<CardsFlip cards={cards} />
+			<Cards
+				flip={true}
+				cards={cards}
+			/>
 		</main>
 	)
 }

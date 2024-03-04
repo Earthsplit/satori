@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Nav from './Nav'
 
-const Header = () => {
+export default function Header() {
 	return (
 		<header className='flex items-center justify-between mb-8'>
 			<Link
@@ -14,5 +14,3 @@ const Header = () => {
 		</header>
 	)
 }
-
-export default Header

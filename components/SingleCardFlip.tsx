@@ -6,7 +6,7 @@ import './ui/styles.css'
 import { CardActions } from './CardActions'
 import { CardProps } from '@/interfaces'
 
-const SingleCardFlip = ({ card }: CardProps) => {
+export default function SingleCardFlip({ card }: CardProps) {
 	const [flip, setFlip] = useState<boolean>(false)
 
 	const toggleFlip = () => setFlip(!flip)
@@ -50,4 +50,3 @@ const SingleCardFlip = ({ card }: CardProps) => {
 		</div>
 	)
 }
-export default SingleCardFlip

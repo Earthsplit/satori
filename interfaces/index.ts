@@ -8,6 +8,7 @@ export interface Card {
 
 export interface CardsProps {
 	cards: Card[]
+	flip: boolean
 }
 
 export interface CardProps {

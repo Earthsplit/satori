@@ -11,8 +11,9 @@ export default async function Page({ params }: { params: { id: number } }) {
 	}
 
 	return (
-		<div>
-			<Cards cards={selectedDeck.cards} />
-		</div>
+		<Cards
+			flip={false}
+			cards={selectedDeck.cards}
+		/>
 	)
 }

@@ -3,7 +3,7 @@ import { Card } from '@/interfaces'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-const useModifyCards = () => {
+export default function useModifyCards() {
 	const [cardData, setCardData] = useState({
 		content: {
 			japanese: '',
@@ -68,5 +68,3 @@ const useModifyCards = () => {
 		deleteCard,
 	}
 }
-
-export default useModifyCards
