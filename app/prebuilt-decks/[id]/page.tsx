@@ -1,11 +1,18 @@
 import Cards from '@/components/Cards'
+import { PrebuiltDeck } from '@/interfaces'
 import getCards from '@/lib/getCards'
 
-export default async function Page() {
-	const cards = await getCards()
+export default async function Page({ params }: { params: { id: number } }) {
+	const prebuiltDecks: PrebuiltDeck[] = await getCards('prebuilt_decks')
+	const selectedDeck = prebuiltDecks.find(deck => deck.id === params.id)
+
+	if (!selectedDeck) {
+		return <p>Deck with set name {params.id} not found</p>
+	}
+
 	return (
 		<div>
-			<Cards cards={cards} />
+			<Cards cards={selectedDeck.cards} />
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
-export default async function getCards() {
-	const response = await fetch('http://localhost:4000/cards', {
+export default async function getCards(url: string) {
+	const response = await fetch(`http://localhost:4000/${url}`, {
 		cache: 'no-cache',
 	})
 
