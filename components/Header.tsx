@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Nav from './Nav'
+import { ToggleTheme } from './ToggleTheme'
 
 export default function Header() {
 	return (
@@ -10,7 +11,10 @@ export default function Header() {
 			>
 				Satori 🇯🇵
 			</Link>
-			<Nav />
+			<div className='flex gap-4'>
+				<Nav />
+				<ToggleTheme />
+			</div>
 		</header>
 	)
 }
