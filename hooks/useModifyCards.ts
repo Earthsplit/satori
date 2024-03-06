@@ -36,7 +36,7 @@ export default function useModifyCards() {
 		}
 	}
 
-	async function updateSingleCard(query: string) {
+	async function updateSingleCard(query: string | null) {
 		try {
 			const response = await fetch(`http://localhost:4000/cards/${query}`, {
 				method: 'PUT',

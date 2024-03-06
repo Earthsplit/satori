@@ -65,6 +65,7 @@ export function AddCard() {
 				<DialogFooter>
 					<DialogTrigger asChild>
 						<Button
+							variant='secondary'
 							type='submit'
 							onClick={updateCards}
 						>

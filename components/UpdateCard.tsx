@@ -5,9 +5,12 @@ import { Input } from './ui/input'
 import { Button } from './ui/button'
 import useModifyCards from '@/hooks/useModifyCards'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { useSearchParams } from 'next/navigation'
 
-export function UpdateCard({ query }: any) {
+export function UpdateCard() {
 	const { cardData, handleChange, updateSingleCard } = useModifyCards()
+	const searchParams = useSearchParams()
+	const query = searchParams.get('id')
 
 	return (
 		<Card>
@@ -45,6 +48,7 @@ export function UpdateCard({ query }: any) {
 			</CardContent>
 			<CardFooter>
 				<Button
+					variant='secondary'
 					type='submit'
 					onClick={() => updateSingleCard(query)}
 				>
