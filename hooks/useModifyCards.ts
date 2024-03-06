@@ -12,7 +12,7 @@ export default function useModifyCards() {
 	})
 	const router = useRouter()
 
-	const updateCards = async () => {
+	async function updateCards() {
 		try {
 			const response = await fetch('http://localhost:4000/cards', {
 				method: 'POST',
@@ -36,7 +36,37 @@ export default function useModifyCards() {
 		}
 	}
 
-	const deleteCard = async (card: Card) => {
+	async function updateSingleCard(query: string) {
+		try {
+			const response = await fetch(`http://localhost:4000/cards/${query}`, {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(cardData),
+			})
+
+			console.log(response.status)
+
+			router.refresh()
+			if (!response.ok) throw new Error('Error')
+
+			setCardData({
+				content: {
+					japanese: '',
+					english: '',
+				},
+			})
+		} catch (error) {
+			console.error('Error updating cards:', error)
+		}
+	}
+
+	function redirectCardUpdate(card: Card) {
+		router.push(`/edit-card?id=${card.id}`)
+	}
+
+	async function deleteCard(card: Card) {
 		try {
 			const response = await fetch(`http://localhost:4000/cards/${card.id}`, {
 				method: 'DELETE',
@@ -50,7 +80,7 @@ export default function useModifyCards() {
 		}
 	}
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
 		const { name, value } = e.target
 		setCardData(prev => ({
 			...prev,
@@ -66,5 +96,7 @@ export default function useModifyCards() {
 		handleChange,
 		updateCards,
 		deleteCard,
+		redirectCardUpdate,
+		updateSingleCard,
 	}
 }

@@ -15,8 +15,8 @@ import {
 import useModifyCards from '@/hooks/useModifyCards'
 import { CardActionsProps } from '@/interfaces'
 
-export function CardActions({ card, showDeleteButton }: CardActionsProps) {
-	const { deleteCard } = useModifyCards()
+export function CardActions({ card }: CardActionsProps) {
+	const { deleteCard, redirectCardUpdate } = useModifyCards()
 
 	return (
 		<DropdownMenu modal={false}>
@@ -32,22 +32,20 @@ export function CardActions({ card, showDeleteButton }: CardActionsProps) {
 				align='end'
 				className='w-[160px]'
 			>
-				<DropdownMenuItem>
+				<DropdownMenuItem onClick={() => redirectCardUpdate(card)}>
 					<Pencil2Icon className='mr-2 h-4 w-4' />
 					<span>Edit</span>
 				</DropdownMenuItem>
-				{card && showDeleteButton && (
-					<>
-						<DropdownMenuSeparator />
-						<DropdownMenuItem
-							className='text-red-600'
-							onClick={() => deleteCard(card)}
-						>
-							<TrashIcon className='mr-2 h-4 w-4' />
-							<span>Delete</span>
-						</DropdownMenuItem>
-					</>
-				)}
+				<>
+					<DropdownMenuSeparator />
+					<DropdownMenuItem
+						className='text-red-600'
+						onClick={() => deleteCard(card)}
+					>
+						<TrashIcon className='mr-2 h-4 w-4' />
+						<span>Delete</span>
+					</DropdownMenuItem>
+				</>
 			</DropdownMenuContent>
 		</DropdownMenu>
 	)

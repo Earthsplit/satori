@@ -16,10 +16,7 @@ export default function SingleCardFlip({ card }: CardProps) {
 			<Card className='front'>
 				<CardHeader className='flex flex-row items-center justify-between'>
 					<CardTitle>{card.content.japanese}</CardTitle>
-					<CardActions
-						card={card}
-						showDeleteButton={true}
-					/>
+					<CardActions card={card} />
 				</CardHeader>
 				<CardFooter>
 					<Button
@@ -33,10 +30,7 @@ export default function SingleCardFlip({ card }: CardProps) {
 			<Card className='back'>
 				<CardHeader className='flex flex-row items-center justify-between'>
 					<CardTitle>{card.content.english}</CardTitle>
-					<CardActions
-						card={card}
-						showDeleteButton={true}
-					/>
+					<CardActions card={card} />
 				</CardHeader>
 				<CardFooter>
 					<Button

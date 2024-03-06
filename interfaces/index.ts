@@ -16,8 +16,7 @@ export interface CardProps {
 }
 
 export interface CardActionsProps {
-	card?: Card
-	showDeleteButton: boolean
+	card: Card
 }
 
 export interface PrebuiltDeck {
