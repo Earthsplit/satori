@@ -1,8 +1,13 @@
 import CardSet from '@/components/CardSet'
 import getCards from '@/lib/getCards'
+import Error from 'next/error'
 
 export default async function PrebuiltDecks() {
 	const prebuiltDecks = await getCards('prebuilt_decks')
+
+	if (!prebuiltDecks) {
+		return <p>Failed to fetch decks</p>
+	}
 
 	return (
 		<main className='grid gap-4'>
