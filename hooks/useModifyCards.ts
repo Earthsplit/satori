@@ -14,7 +14,7 @@ export default function useModifyCards() {
 
 	async function updateCards() {
 		try {
-			const response = await fetch('http://localhost:4000/cards', {
+			const response = await fetch('http://127.0.0.1:4000/cards', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export default function useModifyCards() {
 
 	async function updateSingleCard(query: string | null) {
 		try {
-			const response = await fetch(`http://localhost:4000/cards/${query}`, {
+			const response = await fetch(`http://127.0.0.1:4000/cards/${query}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export default function useModifyCards() {
 
 	async function deleteCard(card: Card) {
 		try {
-			const response = await fetch(`http://localhost:4000/cards/${card.id}`, {
+			const response = await fetch(`http://127.0.0.1:4000/cards/${card.id}`, {
 				method: 'DELETE',
 			})
 

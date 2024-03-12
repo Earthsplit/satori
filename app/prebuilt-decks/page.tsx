@@ -1,6 +1,5 @@
 import CardSet from '@/components/CardSet'
 import getCards from '@/lib/getCards'
-import Error from 'next/error'
 
 export default async function PrebuiltDecks() {
 	const prebuiltDecks = await getCards('prebuilt_decks')
