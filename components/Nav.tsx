@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { ToggleTheme } from './ToggleTheme'
 
 export default function Nav({
 	className,
@@ -7,21 +8,22 @@ export default function Nav({
 }: React.HTMLAttributes<HTMLElement>) {
 	return (
 		<nav
-			className={cn('flex items-center space-x-4 lg:space-x-6', className)}
+			className={cn('md:space-x-4 lg:space-x-6', className)}
 			{...props}
 		>
 			<Link
 				href='/'
-				className='text-sm font-medium transition-colors hover:text-primary'
+				className='font-medium transition-colors hover:text-primary'
 			>
 				Your deck
 			</Link>
 			<Link
-				className='text-sm font-medium transition-colors hover:text-primary'
+				className='font-medium transition-colors hover:text-primary'
 				href='/prebuilt-decks'
 			>
 				Prebuilt decks
 			</Link>
+			<ToggleTheme />
 		</nav>
 	)
 }
