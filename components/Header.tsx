@@ -14,10 +14,10 @@ export default function Header() {
 			className={`${
 				isClicked
 					? 'flex flex-col justify-between'
-					: 'flex flex-col items-center justify-between'
+					: 'flex items-center justify-between'
 			} mb-8`}
 		>
-			<div className='flex w-full justify-between'>
+			<div className='flex flex-1 justify-between'>
 				<Link
 					href='/'
 					className='font-bold tracking-tight text-3xl md:text-4xl'
