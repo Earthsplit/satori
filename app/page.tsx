@@ -1,21 +1,24 @@
+export const dynamic = 'force-dynamic'
+
 import { AddCard } from '@/components/AddCard'
 import Cards from '@/components/Cards'
 import getCards from '@/lib/getCards'
 
 export default async function Home() {
-	const cards = await getCards('cards')
+	// const cards = await getCards('cards')
 
-	if (!cards) {
-		return <p>Failed to fetch cards</p>
-	}
+	// if (!cards) {
+	// 	return <p>Failed to fetch cards</p>
+	// }
 
 	return (
 		<main className='grid'>
-			<AddCard />
-			<Cards
+			{/* <AddCard /> */}
+			{/* <Cards
 				flip={true}
 				cards={cards}
-			/>
+			/> */}
+			<div className=''>test</div>
 		</main>
 	)
 }

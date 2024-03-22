@@ -12,7 +12,7 @@ import Link from 'next/link'
 export default function CardSet({ decks }: PrebuiltDecks) {
 	return (
 		<div className='grid gap-4'>
-			{decks.map(deck => (
+			{decks.map((deck, id) => (
 				<div key={deck.id}>
 					<Card>
 						<CardHeader>

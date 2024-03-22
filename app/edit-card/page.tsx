@@ -3,8 +3,9 @@ import { Suspense } from 'react'
 
 export default function Page() {
 	return (
-		<Suspense>
-			<UpdateCard />
-		</Suspense>
+		// <Suspense>
+		// 	<UpdateCard />
+		// </Suspense>
+		<div className=''>test</div>
 	)
 }
