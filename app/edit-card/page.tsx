@@ -1,5 +1,10 @@
 import { UpdateCard } from '@/components/UpdateCard'
+import { Suspense } from 'react'
 
 export default function Page() {
-	return <UpdateCard />
+	return (
+		<Suspense>
+			<UpdateCard />
+		</Suspense>
+	)
 }
