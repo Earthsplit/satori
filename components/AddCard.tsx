@@ -41,7 +41,7 @@ export function AddCard() {
 							name='japanese'
 							className='col-span-3'
 							placeholder='日本'
-							value={cardData.content.japanese}
+							value={cardData.japanese}
 							onChange={handleChange}
 						/>
 					</div>
@@ -57,7 +57,7 @@ export function AddCard() {
 							name='english'
 							className='col-span-3'
 							placeholder='Japan'
-							value={cardData.content.english}
+							value={cardData.english}
 							onChange={handleChange}
 						/>
 					</div>

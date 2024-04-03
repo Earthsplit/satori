@@ -1,10 +1,4 @@
-export interface Card {
-	id: number
-	content: {
-		japanese: string
-		english: string
-	}
-}
+import { PrebuiltDeck, Card } from '@prisma/client'
 
 export interface CardsProps {
 	cards: Card[]
@@ -19,12 +13,10 @@ export interface CardActionsProps {
 	card: Card
 }
 
-export interface PrebuiltDeck {
-	id: number
-	set: string
-	cards: Card[]
+export interface PrebuiltDeckProps {
+	deck: PrebuiltDeck
 }
 
-export interface PrebuiltDecks {
-	decks: PrebuiltDeck[]
+export interface CardProps {
+	card: Card
 }

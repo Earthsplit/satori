@@ -35,7 +35,7 @@ export default function Header() {
 				</div>
 			</div>
 			<div className='md:flex items-center hidden gap-4'>
-				<Nav />
+				<Nav className='flex items-center' />
 			</div>
 			{isClicked && <Nav className='flex flex-col gap-2' />}
 		</header>

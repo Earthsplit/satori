@@ -1,24 +1,21 @@
 import Cards from '@/components/Cards'
-import { PrebuiltDeck } from '@/interfaces'
-import getCards from '@/lib/getCards'
+import { db } from '@/lib/db'
 
-export default async function Page({ params }: { params: { id: number } }) {
-	// const prebuiltDecks: PrebuiltDeck[] = await getCards('prebuilt_decks')
-	// const selectedDeck = prebuiltDecks.find(deck => deck.id === params.id)
+export default async function Page({ params }: { params: { id: string } }) {
+	const prebuiltDecks = await db.card.findMany({
+		where: {
+			prebuiltDeckId: params.id,
+		},
+	})
 
-	// if (!prebuiltDecks) {
-	// 	return <p>Failed to fetch cards</p>
-	// }
-
-	// if (!selectedDeck) {
-	// 	return <p>Deck with set name {params.id} not found</p>
-	// }
+	if (!prebuiltDecks) {
+		return <p>Failed to fetch cards</p>
+	}
 
 	return (
-		// <Cards
-		// 	flip={false}
-		// 	cards={selectedDeck.cards}
-		// />
-		<div className=''>Test</div>
+		<Cards
+			flip={false}
+			cards={prebuiltDecks}
+		/>
 	)
 }

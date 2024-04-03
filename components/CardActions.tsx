@@ -14,9 +14,10 @@ import {
 } from '@radix-ui/react-icons'
 import useModifyCards from '@/hooks/useModifyCards'
 import { CardActionsProps } from '@/interfaces'
+import Link from 'next/link'
 
 export function CardActions({ card }: CardActionsProps) {
-	const { deleteCard, redirectCardUpdate } = useModifyCards()
+	const { deleteCard } = useModifyCards()
 
 	return (
 		<DropdownMenu modal={false}>
@@ -32,10 +33,12 @@ export function CardActions({ card }: CardActionsProps) {
 				align='end'
 				className='w-[160px]'
 			>
-				<DropdownMenuItem onClick={() => redirectCardUpdate(card)}>
-					<Pencil2Icon className='mr-2 h-4 w-4' />
-					<span>Edit</span>
-				</DropdownMenuItem>
+				<Link href={`/edit-card?id=${card.id}`}>
+					<DropdownMenuItem>
+						<Pencil2Icon className='mr-2 h-4 w-4' />
+						<span>Edit</span>
+					</DropdownMenuItem>
+				</Link>
 				<>
 					<DropdownMenuSeparator />
 					<DropdownMenuItem

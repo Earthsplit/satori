@@ -6,29 +6,20 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card'
-import { PrebuiltDecks } from '@/interfaces'
+import { PrebuiltDeckProps } from '@/interfaces'
 import Link from 'next/link'
 
-export default function CardSet({ decks }: PrebuiltDecks) {
+export default function CardSet({ deck }: PrebuiltDeckProps) {
 	return (
-		<div className='grid gap-4'>
-			{decks.map((deck, id) => (
-				<div key={deck.id}>
-					<Card>
-						<CardHeader>
-							<CardTitle>{deck.set}</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<p>Number of words: {deck.cards.length}</p>
-						</CardContent>
-						<CardFooter>
-							<Link href={`/prebuilt-decks/${deck.id}`}>
-								<Button variant='secondary'>Learn</Button>
-							</Link>
-						</CardFooter>
-					</Card>
-				</div>
-			))}
-		</div>
+		<Card>
+			<CardHeader>
+				<CardTitle>{deck.name}</CardTitle>
+			</CardHeader>
+			<CardFooter>
+				<Link href={`/prebuilt-decks/${deck.id}`}>
+					<Button variant='secondary'>Learn</Button>
+				</Link>
+			</CardFooter>
+		</Card>
 	)
 }

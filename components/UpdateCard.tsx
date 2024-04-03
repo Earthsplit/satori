@@ -11,6 +11,7 @@ export function UpdateCard() {
 	const { cardData, handleChange, updateSingleCard } = useModifyCards()
 	const searchParams = useSearchParams()
 	const query = searchParams.get('id')
+	console.log(query)
 
 	return (
 		<Card>
@@ -30,7 +31,7 @@ export function UpdateCard() {
 							id='name'
 							name='japanese'
 							placeholder='日本'
-							value={cardData.content.japanese}
+							value={cardData.japanese}
 							onChange={handleChange}
 						/>
 					</div>
@@ -40,7 +41,7 @@ export function UpdateCard() {
 							id='username'
 							name='english'
 							placeholder='Japan'
-							value={cardData.content.english}
+							value={cardData.english}
 							onChange={handleChange}
 						/>
 					</div>
