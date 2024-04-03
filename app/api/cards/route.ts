@@ -14,3 +14,9 @@ export async function POST(request: Request) {
 
 	return NextResponse.json({ result })
 }
+
+export async function GET(request: Request) {
+	const res = await db.card.findMany()
+
+	return NextResponse.json(res)
+}

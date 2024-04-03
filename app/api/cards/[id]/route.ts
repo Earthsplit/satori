@@ -7,8 +7,6 @@ export async function DELETE(
 ) {
 	const id = params.id
 
-	console.log(id)
-
 	const result = await db.card.delete({
 		where: { id },
 	})
@@ -22,12 +20,8 @@ export async function PUT(
 ) {
 	const id = params.id
 
-	console.log(id)
-
 	const res = await request.json()
 	const { english, japanese } = res
-
-	console.log(english, japanese)
 
 	const result = await db.card.update({
 		where: { id },

@@ -3,12 +3,12 @@
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import useModifyCards from '@/hooks/useModifyCards'
+import useCards from '@/hooks/useCards'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card'
 import { useSearchParams } from 'next/navigation'
 
 export function UpdateCard() {
-	const { cardData, handleChange, updateSingleCard } = useModifyCards()
+	const { cardData, handleChange, updateSingleCard } = useCards()
 	const searchParams = useSearchParams()
 	const query = searchParams.get('id')
 	console.log(query)

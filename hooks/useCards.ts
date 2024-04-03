@@ -1,9 +1,10 @@
 'use client'
 import { Card } from '@prisma/client'
+import { revalidatePath } from 'next/cache'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-export default function useModifyCards() {
+export default function useCards() {
 	const [cardData, setCardData] = useState({
 		japanese: '',
 		english: '',
@@ -21,6 +22,7 @@ export default function useModifyCards() {
 			})
 
 			router.refresh()
+
 			if (!response.ok) throw new Error('Error')
 
 			setCardData({
@@ -43,6 +45,7 @@ export default function useModifyCards() {
 			})
 
 			router.refresh()
+
 			if (!response.ok) throw new Error('Error')
 
 			setCardData({

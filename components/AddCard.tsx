@@ -11,10 +11,10 @@ import {
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
-import useModifyCards from '@/hooks/useModifyCards'
+import useCards from '@/hooks/useCards'
 
 export function AddCard() {
-	const { cardData, handleChange, updateCards } = useModifyCards()
+	const { cardData, handleChange, updateCards } = useCards()
 
 	return (
 		<Dialog>

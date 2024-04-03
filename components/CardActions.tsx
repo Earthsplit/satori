@@ -12,12 +12,12 @@ import {
 	TrashIcon,
 	Pencil2Icon,
 } from '@radix-ui/react-icons'
-import useModifyCards from '@/hooks/useModifyCards'
+import useCards from '@/hooks/useCards'
 import { CardActionsProps } from '@/interfaces'
 import Link from 'next/link'
 
 export function CardActions({ card }: CardActionsProps) {
-	const { deleteCard } = useModifyCards()
+	const { deleteCard } = useCards()
 
 	return (
 		<DropdownMenu modal={false}>
